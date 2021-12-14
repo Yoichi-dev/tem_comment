@@ -144,23 +144,21 @@ export default {
           }
         } else if (Object.keys(getJson).length === 12) {
           // ギフトログ
-          if (document.hasFocus()) {
-            if (getJson.gt == 2) {
-              // 投票
-              if (Number(getJson.g) > 10000 && Number(getJson.g) <= 10070) {
-              } else if (getJson.g == 1601) {
-                // 虹星
-                this.fallGift(getJson);
-              } else {
-                // 無料
-                this.fallGiftFree(getJson);
-                this.giftFree(getJson);
-              }
-            } else {
-              // 有料
+          if (getJson.gt == 2) {
+            // 投票
+            if (Number(getJson.g) > 10000 && Number(getJson.g) <= 10070) {
+            } else if (getJson.g == 1601) {
+              // 虹星
               this.fallGift(getJson);
-              this.giftPre(getJson);
+            } else {
+              // 無料
+              this.fallGiftFree(getJson);
+              this.giftFree(getJson);
             }
+          } else {
+            // 有料
+            this.fallGift(getJson);
+            this.giftPre(getJson);
           }
 
           // this.fallGift(getJson);
@@ -320,6 +318,7 @@ export default {
         let id = `gift_${gift.u}_${gift.g}_${i}`;
         // ギフト画像の要素を作成
         let giftImgElement = document.createElement("img");
+        giftImgElement.classList.add("bg-top");
         // 画像を設定
         giftImgElement.src = `https://image.showroom-cdn.com/showroom-prod/assets/img/gift/${gift.g}_s.png`;
         giftImgElement.style.width = "100px";
@@ -424,6 +423,11 @@ export default {
 </script>
 
 <style>
+#gift {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+}
 .bg-top {
   z-index: 20 !important;
 }
