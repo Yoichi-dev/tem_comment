@@ -191,6 +191,8 @@ export default {
               avatar: commentObj.av,
             };
           }
+        } else if (commentObj.u == "6109782") {
+          // 荒らし
         } else {
           this.commentData = {
             id: commentObj.u,
