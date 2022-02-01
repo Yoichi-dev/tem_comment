@@ -191,7 +191,11 @@ export default {
               avatar: commentObj.av,
             };
           }
-        } else if (commentObj.ac == "WANAO") {
+        } else if (
+          commentObj.cm == "🤬💢" ||
+          commentObj.ac == "WANAO" ||
+          commentObj.ac == "NAAAA"
+        ) {
           // 荒らし
         } else {
           this.commentData = {
