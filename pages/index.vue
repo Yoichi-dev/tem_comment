@@ -191,7 +191,7 @@ export default {
               avatar: commentObj.av,
             };
           }
-        } else if (commentObj.u == "6109782") {
+        } else if (commentObj.ac == "WANAO") {
           // 荒らし
         } else {
           this.commentData = {
