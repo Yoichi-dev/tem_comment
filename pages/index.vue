@@ -193,6 +193,7 @@ export default {
           }
         } else if (
           commentObj.cm == "🤬💢" ||
+          commentObj.cm == "「いらすとや」" ||
           commentObj.ac == "WANAO" ||
           commentObj.ac == "NAAAA" ||
           commentObj.cm.match(/💢/)
