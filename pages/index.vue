@@ -196,7 +196,10 @@ export default {
           commentObj.cm == "「いらすとや」" ||
           commentObj.ac == "WANAO" ||
           commentObj.ac == "NAAAA" ||
-          commentObj.cm.match(/💢/)
+          commentObj.cm.match(/💢/) ||
+          commentObj.cm.match(/し、ね/) ||
+          commentObj.cm.match(/シ、ネ/) ||
+          commentObj.cm.match(/ブ、ス/)
         ) {
           // 荒らし
         } else {
@@ -362,6 +365,7 @@ export default {
         let id = `pon_${userId}_${i}`;
         // ギフト画像の要素を作成
         let giftImgElement = document.createElement("img");
+        giftImgElement.classList.add("bg-top");
         // 画像を設定
         giftImgElement.src = require(`@/assets/image/${img}.png`);
         giftImgElement.style.width = `${size}px`;
@@ -397,6 +401,7 @@ export default {
         let id = `gift_${userId}_${i}`;
         // ギフト画像の要素を作成
         let giftImgElement = document.createElement("img");
+        giftImgElement.classList.add("bg-top");
         // 画像を設定
         giftImgElement.src = `https://image.showroom-cdn.com/showroom-prod/assets/img/gift/${gid}_s.png`;
         giftImgElement.style.width = "100px";
