@@ -194,7 +194,8 @@ export default {
         } else if (
           commentObj.cm == "🤬💢" ||
           commentObj.ac == "WANAO" ||
-          commentObj.ac == "NAAAA"
+          commentObj.ac == "NAAAA" ||
+          commentObj.cm.match(/💢/)
         ) {
           // 荒らし
         } else {
