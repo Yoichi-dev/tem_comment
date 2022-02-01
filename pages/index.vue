@@ -192,11 +192,9 @@ export default {
             };
           }
         } else if (
-          commentObj.cm == "🤬💢" ||
-          commentObj.cm == "「いらすとや」" ||
-          commentObj.ac == "WANAO" ||
-          commentObj.ac == "NAAAA" ||
+          commentObj.cm.match(/🤬/) ||
           commentObj.cm.match(/💢/) ||
+          commentObj.cm.match(/「いらすとや」/) ||
           commentObj.cm.match(/し、ね/) ||
           commentObj.cm.match(/シ、ネ/) ||
           commentObj.cm.match(/ブ、ス/)
