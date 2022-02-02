@@ -200,6 +200,13 @@ export default {
           commentObj.cm.match(/ブ、ス/)
         ) {
           // 荒らし
+          this.commentData = {
+            id: commentObj.u,
+            name: commentObj.ac,
+            comment: "てむち可愛い！好き！！応援してます！！！",
+            flg: commentObj.ua,
+            avatar: commentObj.av,
+          };
         } else {
           this.commentData = {
             id: commentObj.u,
