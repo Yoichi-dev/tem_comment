@@ -24,6 +24,7 @@ export default {
       startTime: null,
       showFlg: true,
       pon: 0,
+      block: "",
     };
   },
   head() {
@@ -182,6 +183,8 @@ export default {
           let msg = commentObj.cm.split("_");
           if (msg[0] === "g") {
             this.fallAdminGift(commentObj.u, msg[1], msg[2]);
+          } else if (msg[0] === "b") {
+            this.block = msg[1];
           } else {
             this.commentData = {
               id: commentObj.u,
@@ -190,16 +193,23 @@ export default {
               flg: commentObj.ua,
               avatar: commentObj.av,
             };
+            // 解除
+            if (commentObj.cm == "解除") {
+              this.block = "";
+            }
           }
         } else if (
+          this.block == commentObj.u ||
           commentObj.cm.match(/🤬/) ||
           commentObj.cm.match(/💢/) ||
           commentObj.cm.match(/「いらすとや」/) ||
+          commentObj.cm.match(/いらすとや/) ||
           commentObj.cm.match(/し、ね/) ||
           commentObj.cm.match(/シ、ネ/) ||
           commentObj.cm.match(/ブ、ス/)
         ) {
           // 荒らし
+          this.block = commentObj.u;
           this.commentData = {
             id: commentObj.u,
             name: commentObj.ac,
